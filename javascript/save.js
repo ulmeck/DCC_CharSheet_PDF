@@ -14,7 +14,9 @@ switch (thisField) {
     break; }
 }
 
-var mod = Number(this.getField(attr).value) + Number(this.getField(bonusName).value);
-	
+if (this.getField(attr).value === "") {
+  event.value  = "";
+} else {
+  event.value = Number(this.getField(attr).value) + Number(this.getField(bonusName).value);
+}	
 
-event.value = mod;
